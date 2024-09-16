@@ -1,3 +1,5 @@
+require 'colorizer'
+
 class NumberNinja
   def initialize
     @level = 0
@@ -10,6 +12,9 @@ class NumberNinja
   # Display a welcome message
   # @return [void]
   def hello
+    colorizer = Colorizer.new
+    puts colorizer.colorize("Willkommen bei NumberNinja!", :green)
+    puts colorizer.colorize("Ein Spiel, bei dem du eine zufällige Zahl erraten musst.", :green)
     puts "Willkommen bei NumberNinja!"
 
     if File.exist?("data/highscore.txt")
